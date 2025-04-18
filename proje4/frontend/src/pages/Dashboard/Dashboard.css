@@ -1,0 +1,367 @@
+/* Genel Stiller */
+.dashboard-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.loading-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+}
+
+.error-alert {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  border-left: 4px solid #c62828;
+}
+
+/* Öğrenci Bilgileri */
+.student-info-card {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.student-info-card h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.student-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+/* Kontrol Butonları */
+.control-buttons {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.control-button {
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  min-width: 200px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.control-button.loading {
+  background-color: #81c784 !important;
+}
+
+.control-button:not(.loading) {
+  background-color: #4caf50;
+}
+
+.control-button.active {
+  background-color: #9c27b0;
+}
+
+.makeup-button {
+  background-color: #ff9800;
+}
+
+.logout-button {
+  background-color: #f44336;
+}
+
+/* Mesajlaşma Bölümü */
+.message-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background: #f9f9f9;
+  margin-bottom: 20px;
+}
+
+.instructor-list-container {
+  padding: 10px;
+}
+
+.instructor-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.instructor-card {
+  position: relative;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  z-index: 1;
+}
+
+.instructor-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: #1890ff;
+}
+
+.instructor-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.instructor-name {
+  font-weight: 500;
+}
+
+.message-badge {
+  background-color: #ff4d4f;
+  color: white;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.conversation-view {
+  display: flex !important; /* Emin olmak için */
+  flex-direction: column;
+  height: 500px;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  position: relative; /* Eklendi */
+  z-index: 1; /* Eklendi */
+}
+
+.conversation-header {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1890ff;
+  font-size: 14px;
+  margin-right: 15px;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+
+.messages-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background: white;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+}
+
+.message {
+  max-width: 70%;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.message.sent {
+  background: #d4edda;
+  margin-left: auto;
+}
+
+.message.received {
+  background: #f8f9fa;
+  margin-right: auto;
+}
+
+.message-time {
+  font-size: 0.8em;
+  color: #666;
+  display: block;
+  text-align: right;
+}
+
+.file-link {
+  display: inline-block;
+  margin-top: 5px;
+  color: #1890ff;
+  text-decoration: none;
+}
+
+.file-link:hover {
+  text-decoration: underline;
+}
+
+.no-messages {
+  text-align: center;
+  color: #666;
+  padding: 20px;
+}
+
+.message-form {
+  display: flex;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-label {
+  cursor: pointer;
+  padding: 8px;
+  color: #666;
+}
+
+.message-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.send-button {
+  background: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+.send-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Büt İstekleri */
+.requests-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.requests-container h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.requests-table-container {
+  overflow-x: auto;
+}
+
+.requests-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.requests-table th {
+  padding: 12px;
+  text-align: left;
+  background-color: #e9ecef;
+}
+
+.requests-table td {
+  padding: 12px;
+  border-bottom: 1px solid #dee2e6;
+}
+/* Dashboard.css'e ekleyin */
+.message-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+  min-height: 500px;
+}
+
+.message-list {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+
+.message-bubble {
+  max-width: 70%;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+}
+
+.message-form {
+  display: flex;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.message-input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .control-buttons {
+    flex-direction: column;
+  }
+
+  .control-button {
+    width: 100%;
+  }
+
+  .instructor-list {
+    grid-template-columns: 1fr;
+  }
+}
